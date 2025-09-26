@@ -24,6 +24,7 @@ def download_image(image_url, folder='imagens_salvas', image_name='image.png'):
 nomeCollection = input("Informe o nome da coleção (Ex.: surging-sparks): ")
 codCollection = input("Informe o código da coleção (Ex.: SV08_PTBR_): ")
 siglaCollection = input("Informe a sigla da coleção (Ex.: SSP): ")
+nCartas = int(input("Informe o numero de cartas:  "))
 nMax = int(input("Informe número máximo de cartas da coleção (Ex.: 252): "))  # Convertendo para int
 
 nomePasta = 'imagens_salvas'  # Pasta principal onde as coleções serão salvas
@@ -41,7 +42,7 @@ for n in range(1, nMax + 1):
     image_url = f"https://dz3we2x72f7ol.cloudfront.net/expansions/{nomeCollection}/pt-br/{codCollection}{n}.png"
     
     # Formatando o nome da imagem com a numeração (3 dígitos) e a sigla
-    image_name = f"{str(n).zfill(3)}-{nMax} {siglaCollection}.png"
+    image_name = f"{str(n).zfill(3)}-{nCartas} {siglaCollection}.png"
     
     # Chama a função para fazer o download da imagem
     download_image(image_url, folder_name, image_name)
